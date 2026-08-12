@@ -3,9 +3,13 @@ resource "aws_vpc" "main" {
     instance_tenancy = "default" 
     enable_dns_hostnames = true
 
-tags = local.vpc_final_tags
-       
-  
-  
+    tags = local.vpc_final_tags  
 }
+
+resource "aws_internet_gateway" "main" {
+    vpc_id = aws_vpc.main.id  #vpc_association_id
+    tags = local.igw_final_tags
+}
+
+
 
