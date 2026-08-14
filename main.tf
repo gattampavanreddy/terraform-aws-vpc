@@ -1,6 +1,6 @@
-locals {
-  az_names = data.aws_availability_zones.available.names
-}
+# locals {
+#   az_names = data.aws_availability_zones.available.names
+# }
 
 # data "aws_availability_zones" "available" {
 #   state = "available"
