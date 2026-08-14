@@ -1,3 +1,11 @@
+locals {
+  az_names = data.aws_availability_zones.available.names
+}
+
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
 resource "aws_vpc" "main" {
   cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
